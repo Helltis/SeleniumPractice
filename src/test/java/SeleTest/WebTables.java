@@ -43,5 +43,7 @@ public class WebTables {
 
         }
 
+        driver.close();
+
     }
 }
