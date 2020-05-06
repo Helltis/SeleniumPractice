@@ -41,6 +41,8 @@ public class MultipleBrowsers {
         driver.close();
     }
 
+
+    //method opens all links in different tabs and gets their titles
     public static void clickAll(WebDriver driver) throws InterruptedException {
         driver.get("https://hugoboss.com/us/");
         Thread wait = new Thread();
