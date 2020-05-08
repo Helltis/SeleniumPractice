@@ -11,6 +11,16 @@
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true" />
             </Policies>
+
+        </RollingFile>
+
+        <RollingFile name="fileNoTime" fileName="${log-path}/app-info.log" filePattern="${log-path}/app-info-%d{yyyy-MM-dd}.log">
+            <PatternLayout>
+                <pattern>%msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
         </RollingFile>
 
         <Console name="console" target="SYSTEM_OUT">
@@ -20,6 +30,9 @@
     <Loggers>
         <Logger name="SeleTest.MultipleBrowsers" level="info" additivity="true">
             <appender-ref ref="fileLogger" level="debug" />
+        </Logger>
+        <Logger name="SeleTest.HandlingWebTables" level="info" additivity="true">
+            <appender-ref ref="fileNoTime" level="debug" />
         </Logger>
         <Root level="debug" additivity="false">
             <appender-ref ref="console" />
